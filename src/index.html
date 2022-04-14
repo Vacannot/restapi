@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat</title>
+    <script defer src="./script.js"></script>
+    <script defer src="./addCat.js"></script>
+    <script defer src="./searchCat.js"></script>
+    <script defer src="./editCat.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gridContainer">
+        <div class = "container registerDiv">
+            <h1>Please register your cat</h1>
+            <form>
+                <input type="text" name="name" placeholder ="Name" required id = "inputName">
+                <input type="text" name="breed" placeholder ="Breed" required id = "inputBreed">
+                <input type="number" name="age" placeholder ="Age" required id = "inputAge">
+                <button id="submitButton">Submit</button>
+            </form>
+        </div>
+        <div class="container searchDiv">
+            <input id = "idInput" type ="number" placeholder = "id">
+            <button id = "idSearch">Search by ID!</button>
+            <div id ="showCatWithID"></div>
+        </div>
+        <div class="container listDiv">
+            <form id="editForm"></form>
+            <ul id="listOfCats"></ul>
+        </div>
+    </div>
+</body>
+</html>

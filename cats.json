@@ -1,0 +1,26 @@
+[
+  {
+    "id": 73,
+    "name": "cat numbero uno",
+    "breed": "cat breed one",
+    "age": "1"
+  },
+  {
+    "id": 297,
+    "name": "cat numero dos",
+    "breed": "cat breed numero dos",
+    "age": "2"
+  },
+  {
+    "id": 27,
+    "name": "Meowzer",
+    "breed": "Norwegian Forest Cat",
+    "age": "11"
+  },
+  {
+    "id": 97,
+    "name": "cat numero dos",
+    "breed": "cat breed numero dos",
+    "age": "2"
+  }
+]
