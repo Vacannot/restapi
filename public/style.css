@@ -5,42 +5,13 @@
     outline: none;
 }
 
-body {
-    background: #FFFFFF20;
-    background-size: cover;
-    position:relative;
-    overflow: hidden;
-}
-
 h1{
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
-h2{
-    font-weight: 700;
-}
-
-h3{
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-top: 1rem;
-}
-
-h4{
-    font-weight: 500;
-    font-size: 0.9rem;
-}
-
-p{
-    font-size: 0.9rem;
-    margin-bottom: 0.6rem;
-    margin-left: 0.3rem
-}
-
 li{
     list-style-type: none;
-    background-color: #FFFFFF90;
     margin: 1rem 0;
     padding: 1.5rem 3rem;
 }
@@ -67,7 +38,6 @@ input{
     border-radius: 0.2rem;
     box-shadow: 0 0 2px black;
 }
-
 .gridContainer{
     width: 100%;
     height: 100vh;
@@ -79,66 +49,23 @@ input{
     "registerDiv registerDiv"
     "listDiv searchDiv";
 }
-
 .registerDiv{
     grid-area: registerDiv;
 }
-
-.listDiv{
-    grid-area: listDiv;
-    height: 90%;
-    overflow-y: auto;
-}
-
 .searchDiv{
     grid-area: searchDiv;
     height:55%;
     overflow-y: auto;
 }
-
 .container{
     background-color: #FFFFFF50;
-    border-radius: 1rem;
+    border-radius: 0.1rem;
     box-shadow: 0 0 1rem black;
     padding: 2rem 3.5rem;
     margin: 2rem 3rem;
 }
 
-.denseContainer{
-    background-color: #FFFFFF90
-}
-
-.idNameWrapper{
-    display:flex;
-    flex-direction: row;
-    align-items: flex-end;
-    margin-bottom: 1rem;
-    margin-left: 0.3rem
-}
-
-#clickBackground{
-    position: absolute;
-    top:0;
-    left:0;
-    z-index: 5;
-    width: 100%;
-    height: 100vh;
-    background-color: #00000090;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-::-webkit-scrollbar { 
-    -webkit-appearance: none;
-    width: 0.3rem;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgb(0,0,0);
-}
-
+/* Mediaqueries */
 @media only screen and (max-width: 84.5em){
     .searchDiv{
         height: 90%
@@ -155,11 +82,9 @@ input{
         "searchDiv"
         "listDiv";
     }
-
     .searchDiv{
         height: 90%
     }
-
     .container{
         padding: 1rem 1.5rem;
         margin: 1rem 1rem;
@@ -171,30 +96,24 @@ input{
         font-size: 1.1rem;
         margin: 0.5rem 0
     }
-
     h2{
         font-size: 1rem;
     }
-
     h4{
         font-size: 0.8rem;
         margin: 0 0.5rem 0.1rem 0.5rem
     }
-
     p{
         font-size: 0.8rem;  
     }
-
     button{
         font-size: 0.7rem;
         padding: 0.3rem 0.5rem;
         margin: 0.5rem 0.5rem 0 0.2rem
     }
-
     .gridContainer{
         grid-template-rows: auto;
     }
-
     .container{
         margin: 0.5rem
     }

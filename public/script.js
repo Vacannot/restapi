@@ -1,7 +1,7 @@
 window.addEventListener('load', init);
 
 function init(){
-    fetchAllCats()
+    fetchAllBooks()
     const searchButton = document.getElementById("idSearch")
     searchButton.addEventListener("click", showBookWithID)
     const submitButton = document.getElementById("submitButton")
@@ -11,54 +11,54 @@ function init(){
 function fetchAllBooks(){
     fetch("http://localhost:5500/api/books").then((response) => {
         return response.json()
-    }).then((cats) => {
-        printAllCats(cats)
+    }).then((books) => {
+        printAllbooks(books)
     })
 }
 
-// Cat lists
+// books lists
 
-function printAllCats(cats){
-    let container = document.getElementById("listOfCats")
+function printAllBooks(books){
+    let container = document.getElementById("listOfbooks")
     container.innerHTML = ""
 
-    cats.forEach(cat => {
+    books.forEach(books => {
         let idNameWrapper = document.createElement("div")
         idNameWrapper.setAttribute("class", "idNameWrapper")
 
-        let catName = document.createElement("h2")
-        catName.innerText = cat.name
+        let bookName = document.createElement("h2")
+        bookName.innerText = books.name
 
-        let catID = document.createElement("h4")
-        catID.setAttribute("class", "inlineH2")
-        catID.innerText = `Id: ${cat.id}`
+        let bookID = document.createElement("h4")
+        bookID.setAttribute("class", "inlineH2")
+        bookID.innerText = `Id: ${books.id}`
 
-        let catBreed = document.createElement("p")
-        catBreed.innerText = cat.breed
+        let bookAuthor = document.createElement("p")
+        bookAuthor.innerText = books.author
 
-        let catAge = document.createElement("p")
-        catAge.innerText = `Human years: ${cat.age}`
+        let bookAmount = document.createElement("p")
+        bookAmount.innerText = `Amount in stock:  ${books.amount}`
 
         let deleteButton = document.createElement("button")
         deleteButton.innerText = "Delete"
         deleteButton.addEventListener("click",() => { 
-            fetch(`/api/cats/${cat.id}`, {method: 'DELETE'}, fetchAllCats())
+            fetch(`/api/books/${books.id}`, {method: 'DELETE'}, fetchAllbooks())
         });
 
         let updateButton = document.createElement("button")
         updateButton.innerText = "Update"
-        updateButton.addEventListener("click", () => {showEditForm(cat)},)
+        updateButton.addEventListener("click", () => {showEditForm(books)},)
             
-        let catListItem = document.createElement("li")
-        catListItem.setAttribute("id", "catListItem")
+        let bookListItem = document.createElement("li")
+        bookListItem.setAttribute("id", "bookListItem")
 
-        idNameWrapper.appendChild(catID)
-        idNameWrapper.appendChild(catName)
-        catListItem.appendChild(idNameWrapper)
-        catListItem.appendChild(catBreed)
-        catListItem.appendChild(catAge)
-        catListItem.appendChild(deleteButton)
-        catListItem.appendChild(updateButton)
-        container.appendChild(catListItem)
+        idNameWrapper.appendChild(bookID)
+        idNameWrapper.appendChild(bookName)
+        bookListItem.appendChild(idNameWrapper)
+        bookListItem.appendChild(bookAuthor)
+        bookListItem.appendChild(bookAmount)
+        bookListItem.appendChild(deleteButton)
+        bookListItem.appendChild(updateButton)
+        container.appendChild(bookListItem)
     })
 }

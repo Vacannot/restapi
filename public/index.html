@@ -10,6 +10,7 @@
 <body>
     <div class="gridContainer">
         <div class = "container registerDiv">
+            <!-- Add a new book -->
             <h1>Register Book</h1>
             <form>
                 <input type="text" name="name" placeholder ="Name" required id = "inputName">
@@ -18,15 +19,18 @@
                 <button id="submitButton">Submit</button>
             </form>
         </div>
+        <div class="container listDiv">
+            <!-- Show all books and add button for editing them -->
+            <h1>List of all books in stock</h1>
+            <form id="editForm"></form>
+            <ul id="listOfBooks"></ul>
+        </div>
         <div class="container searchDiv">
             <!-- Search for a Book by the given ID -->
+            <h1>Search for available books by book ID</h1>
             <input id = "idInput" type ="number" placeholder = "id">
             <button id = "idSearch">Search using the product ID!</button>
             <div id ="showBookWithID"></div>
-        </div>
-        <div class="container listDiv">
-            <form id="editForm"></form>
-            <ul id="listOfBooks"></ul>
         </div>
     </div>
 </body>
