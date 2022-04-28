@@ -7,8 +7,8 @@
   },
   {
     "id": 104,
-    "name": "Harry Potter",
-    "breed": "Författare",
-    "age": "1337"
+    "name": "Zlatans Biografi",
+    "author": "Konugen han själv",
+    "amount": "4"
   }
 ]

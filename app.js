@@ -106,7 +106,7 @@ app.delete("/api/books/:id", (req, res) => {
   books.splice(index, 1)
   const data = JSON.stringify(books, null, 2)
   fs.writeFile("./books.json", data, "utf8", () => {
-    console.log("book deleted with id" + book.id )
+    console.log("book deleted with id " + book.id )
   })
 
   res.status(200).send(book)
