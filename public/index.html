@@ -3,33 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat</title>
+    <title>Bookshelf</title>
     <script defer src="./script.js"></script>
-    <script defer src="./addCat.js"></script>
-    <script defer src="./searchCat.js"></script>
-    <script defer src="./editCat.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="gridContainer">
         <div class = "container registerDiv">
-            <h1>Register cat</h1>
+            <h1>Register Book</h1>
             <form>
                 <input type="text" name="name" placeholder ="Name" required id = "inputName">
-                <input type="text" name="breed" placeholder ="Breed" required id = "inputBreed">
-                <input type="number" name="age" placeholder ="Age" required id = "inputAge">
+                <input type="text" name="author" placeholder ="Author" required id = "inputAuthor">
+                <input type="number" name="amount" placeholder ="Amount" required id = "inputAmount">
                 <button id="submitButton">Submit</button>
             </form>
         </div>
         <div class="container searchDiv">
-            <!-- Search for a cat by the given ID-->
+            <!-- Search for a Book by the given ID -->
             <input id = "idInput" type ="number" placeholder = "id">
-            <button id = "idSearch">Search by ID!</button>
-            <div id ="showCatWithID"></div>
+            <button id = "idSearch">Search using the product ID!</button>
+            <div id ="showBookWithID"></div>
         </div>
         <div class="container listDiv">
             <form id="editForm"></form>
-            <ul id="listOfCats"></ul>
+            <ul id="listOfBooks"></ul>
         </div>
     </div>
 </body>

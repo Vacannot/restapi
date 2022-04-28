@@ -3,13 +3,13 @@ window.addEventListener('load', init);
 function init(){
     fetchAllCats()
     const searchButton = document.getElementById("idSearch")
-    searchButton.addEventListener("click", showCatWithID)
+    searchButton.addEventListener("click", showBookWithID)
     const submitButton = document.getElementById("submitButton")
-    submitButton.addEventListener("click", () => {addCat()})
+    submitButton.addEventListener("click", () => {addBook()})
 }
 
-function fetchAllCats(){
-    fetch("http://localhost:5500/api/cats").then((response) => {
+function fetchAllBooks(){
+    fetch("http://localhost:5500/api/books").then((response) => {
         return response.json()
     }).then((cats) => {
         printAllCats(cats)
