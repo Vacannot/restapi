@@ -13,7 +13,7 @@ function addCat(event){
         "age": inputAge.value
     }
 
-    if( (inputName.value === "") || (inputBreed.value === "") || (inputAge.value === "")){
+    if((inputName.value === "") || (inputBreed.value === "") || (inputAge.value === "")){
 
         if(inputName.value === ""){
             inputName.placeholder = "Cat needs a name"
@@ -26,11 +26,11 @@ function addCat(event){
         if(inputAge.value === ""){
             inputAge.placeholder = "Cat needs an age"
         }
-    }else {
-        fetch(`http://localhost:5500/api/cats`, {
+    }else{
+        fetch(`http://localhost:5500/api/cats/`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type" : "application/json"
             },
             body: JSON.stringify(data)
         }, fetchAllCats())
@@ -45,6 +45,6 @@ function addCat(event){
         inputBreed.value = ""
         inputBreed.placeholder = "Name"
         inputAge.value = ""
-        inputAge.placeholder = "Name"
+        inputAge.placeholder = "Age"
     }
 }

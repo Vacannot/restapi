@@ -1,3 +1,6 @@
+GET http://localhost:5500/
+
+###
 GET http://localhost:5500/api/cats
 
 ###
@@ -10,7 +13,7 @@ POST http://localhost:5500/api/cats
 Content-Type: application/json
 
 {
-    "name": "Katta",
+    "name": "asd",
     "breed":"Kattfan",
     "age":"1337"
 }
@@ -23,7 +26,7 @@ Content-Type: application/json
 {
     "name": "Meowzer",
     "breed": "Norwegian Forest Cat",
-    "age": "11"
+    "age": "4"
 }
 
 ###

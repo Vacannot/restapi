@@ -1,14 +1,19 @@
 const express = require("express")
-/* const morgan = require("morgan") */
+const app = express()
 const fs = require("fs")
 
-const app = express()
+
+app.use("/", (req, res, next) => {
+  console.log("api visited")
+  next()
+})
+
+app.use(express.json())
+app.use("/", express.static("public"))
+app.use(express.urlencoded({extended:true}))
 
 const data = fs.readFileSync("cats.json")
 const cats = JSON.parse(data)
-
-/* app.use(morgan("dev")) */
-app.use(express.json())
 
 function generateCatId(){
   return new Date().getUTCMilliseconds();
@@ -23,7 +28,7 @@ app.get("/api/cats/:id", (req, res) => {
   const cat = cats.find( c => c.id === parseInt(req.params.id))
 
   if(!cat){
-    return res.status(404).send("Couldnt find dog with id")
+    return res.status(404).send("Couldnt find cat with id")
   }
 
   res.status(200).send(cat)
@@ -35,6 +40,10 @@ app.get("/api/cats/:id", (req, res) => {
 app.post("/api/cats", (req,res) => {
   if(!req.body.breed || !req.body.age || !req.body.age.match(/^[0-9]+$/)){
     return res.status(400).send("Your input is incorrect")
+  }
+
+  if(req.body.name === "" || req.body.breed === "" || req.body.age ==="" ){
+    return res.status(400).send("All fields need to be filled")
   }
 
   const cat = {
@@ -70,6 +79,10 @@ app.put("/api/cats/:id", (req, res) => {
   cat.breed = req.body.breed
   cat.age = req.body.age
 
+  if(req.body.name === "" || req.body.breed === "" || req.body.age ==="" ){
+    return res.status(400).send("All fields need to be filled")
+  }
+
   fs.readFile("./cats.json", "utf8", () => {
     const data = JSON.stringify(cats, null, 2)
 
@@ -85,7 +98,6 @@ app.put("/api/cats/:id", (req, res) => {
 
 app.delete("/api/cats/:id", (req, res) => {
   const cat = cats.find( cat => cat.id === parseInt(req.params.id))
-
   if(!cat){
     return res.status(404).send("Couldnt find cat with that ID")
   }
@@ -94,7 +106,7 @@ app.delete("/api/cats/:id", (req, res) => {
   cats.splice(index, 1)
   const data = JSON.stringify(cats, null, 2)
   fs.writeFile("./cats.json", data, "utf8", () => {
-    console.log("Cat deleted")
+    console.log("Cat deleted with id" + cat.id )
   })
 
   res.status(200).send(cat)

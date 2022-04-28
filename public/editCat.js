@@ -2,6 +2,8 @@
 
 function showEdit(cat){
 
+    console.log("trying to open edit form")
+
     const backgroundDiv = document.createElement("div")
     backgroundDiv.setAttribute("id", "clickBackground")
     backgroundDiv.addEventListener("click", () => {

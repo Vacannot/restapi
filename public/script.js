@@ -5,7 +5,7 @@ function init(){
     const searchButton = document.getElementById("idSearch")
     searchButton.addEventListener("click", showCatWithID)
     const submitButton = document.getElementById("submitButton")
-    submitButton.addEventListener("click", () => {addCat(event)})
+    submitButton.addEventListener("click", () => {addCat()})
 }
 
 function fetchAllCats(){
@@ -16,7 +16,7 @@ function fetchAllCats(){
     })
 }
 
-/************* All dogs-list (GET dogs) ***************/
+// Cat lists
 
 function printAllCats(cats){
     let container = document.getElementById("listOfCats")
